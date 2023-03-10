@@ -1,6 +1,7 @@
+import React from "react";
 import "./ExpenseDetails.css";
 
-function ExpenseDetails(props) {
+const ExpenseDetails = (props) => {
   return (
     <div className="expense-item__description">
       <h3>{props.location}</h3>
@@ -8,6 +9,6 @@ function ExpenseDetails(props) {
       <div className="expense-item__price">&#8377;{props.amount}</div>
     </div>
   );
-}
+};
 
 export default ExpenseDetails;
