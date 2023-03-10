@@ -4,16 +4,19 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 
 const Expenses = (props) => {
-  const expenseList = props.items.map((expense) => {
-    return (
+  const expenses = props.items;
+  let expenseList = [];
+  for (let i = 0; i < expenses.length; i++) {
+    expenseList.push(
       <ExpenseItem
-        date={expense.date}
-        location={expense.location}
-        title={expense.title}
-        amount={expense.amount}
+        key={i}
+        date={expenses[i].date}
+        location={expenses[i].location}
+        title={expenses[i].title}
+        amount={expenses[i].amount}
       />
     );
-  });
+  }
   return <Card className="expenses">{expenseList}</Card>;
 };
 
